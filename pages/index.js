@@ -36,7 +36,7 @@ export default function LandingPage() {
         title={t("seo.title")}
         description={t("seo.description")}
         openGraph={{
-          locale: router.locale
+          locale: router.locale,
         }}
       />
       <Head></Head>
@@ -62,9 +62,7 @@ export default function LandingPage() {
 
               <div className="relative">
                 <h1 className="text-3xl sm:text-5xl  text-left">
-                  <span className="opacity-30">
-                    {t("what did you do today")}
-                  </span>
+                  <span className="opacity-30">{t("what did you do today")}</span>
                   <br></br>
                   <span className="opacity-80">{t("yesterday")}</span>
                   <br></br>
@@ -80,9 +78,7 @@ export default function LandingPage() {
             {/* another section with "our brain tries to forget anything" & "write to remember more" */}
             <section className="min-h-[75vh] relative  flex items-center ">
               <h2 className="z-10 text-3xl sm:text-5xl  md:ml-56">
-                <div className="opacity-30">
-                  our brain tends to forget things
-                </div>
+                <div className="opacity-30">our brain tends to forget things</div>
                 <div className="opacity-80">write to remember</div>
                 <div className="opacity-20">and read back when you can’t</div>
               </h2>
@@ -104,64 +100,37 @@ export default function LandingPage() {
 
             <section className="  md:grid md:grid-cols-2 items-center py-28">
               <div className=" h-[300px] relative">
-                <Image
-                  src="/img/feature-text-editor.png"
-                  alt="g"
-                  layout="fill"
-                  objectFit="contain"
-                  quality={100}
-                />
+                <Image src="/img/feature-text-editor.png" alt="g" layout="fill" objectFit="contain" quality={100} />
               </div>
               <div className="">
                 <h4 className="text-3xl sm:text-5xl  text-left">text editor</h4>
                 <br></br>
-                <p className="text-gray-300  text-2xl max-w-[500px]">
-                  to focus on your story we have created a very simplistic text
-                  editor - you have all the freedom to express yourself
-                </p>
+                <p className="text-gray-300  text-2xl max-w-[500px]">to focus on your story we have created a very simplistic text editor - you have all the freedom to express yourself</p>
               </div>
             </section>
 
             <section className="  md:grid md:grid-cols-2 items-center py-28">
               <div className=" h-[300px] relative">
-                <Image
-                  src="/img/feature-encryption.png"
-                  alt="g"
-                  layout="fill"
-                  objectFit="contain"
-                  quality={100}
-                />
+                <Image src="/img/feature-encryption.png" alt="g" layout="fill" objectFit="contain" quality={100} />
               </div>
               <div className="">
-                <h4 className="text-3xl sm:text-5xl  text-left">
-                  privacy first
-                </h4>
+                <h4 className="text-3xl sm:text-5xl  text-left">privacy first</h4>
                 <br></br>
                 <p className="text-gray-300  text-2xl max-w-[500px]">
-                  since writings are as personal as it gets - all your writings
-                  will be encrypted before they are uploaded. We use a privat
-                  key that you only now. Nobody can read your writings.
+                  since writings are as personal as it gets - all your writings will be encrypted before they are uploaded. We use a privat key that you only now. Nobody can read your writings.
                 </p>
               </div>
             </section>
 
             <section className="md:grid md:grid-cols-2 items-center py-28">
               <div className=" h-[500px] relative">
-                <Image
-                  src="/img/feature-mail-reminder.png"
-                  alt="g"
-                  layout="fill"
-                  objectFit="contain"
-                  quality={100}
-                />
+                <Image src="/img/feature-mail-reminder.png" alt="g" layout="fill" objectFit="contain" quality={100} />
               </div>
               <div className="">
                 <h4 className="text-3xl sm:text-5xl  text-left">reminder</h4>
                 <br></br>
                 <p className="text-gray-300  text-2xl max-w-[500px]">
-                  in this busy world it can be easy to forget to pause and
-                  reflect. Decide how you like to be reminded to take some time
-                  to write.
+                  in this busy world it can be easy to forget to pause and reflect. Decide how you like to be reminded to take some time to write.
                 </p>
               </div>
             </section>
@@ -184,14 +153,8 @@ export default function LandingPage() {
                     <span className="text-white opacity-100">vuuu</span>
                   </p>
                 </h2>
-                <Link
-                  className="text-sm sm:text-xl text-center z-50"
-                  href="/"
-                  locale={router.locale === "en" ? "de" : "en"}
-                >
-                  <button className="text-white">
-                    {router.locale === "en" ? "Deutsch" : "English"}
-                  </button>
+                <Link className="text-sm sm:text-xl text-center z-50" href="/" locale={router.locale === "en" ? "de" : "en"}>
+                  <button className="text-white">{router.locale === "en" ? "Deutsch" : "English"}</button>
                 </Link>
               </div>
             </footer>
@@ -207,7 +170,7 @@ export function SignUpForm() {
     register,
     handleSubmit,
     watch,
-    formState: { errors }
+    formState: { errors },
   } = useForm();
   const [registerOnWaitinglist, setRegisterOnWaitinglist] = useState(false);
   const [email, setEmail] = useState(false);
@@ -217,12 +180,18 @@ export function SignUpForm() {
     const res = await fetch("/api/notion", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: watch("email") })
+      body: JSON.stringify({ email: watch("email") }),
     });
 
     if (res.ok !== true) {
+      setRegisterOnWaitinglist("error");
       return false;
     }
+
+    // post response to console
+    const json = await res.json();
+    console.log(json);
+
     setEmail(watch("email"));
     setRegisterOnWaitinglist(true); // set response
   };
@@ -231,9 +200,7 @@ export function SignUpForm() {
     <div className="absolute mt-12 dark:bg-slate-800 bg-white border-sm border-gray-300 w-full max-w-screen-sm flex flex-col p-4 rounded-xl mb-2">
       {!registerOnWaitinglist && (
         <>
-          <h2 className="mb-2  text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#FFEC50] to-[#FFAF27] leading-6">
-            Join the waiting list →
-          </h2>
+          <h2 className="mb-2  text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#FFEC50] to-[#FFAF27] leading-6">Join the waiting list →</h2>
           <p className="text-gray-300">
             We will inform you as soon as we launch our beta{" "}
             <span role="img" aria-label="thumbs-up">
@@ -242,27 +209,16 @@ export function SignUpForm() {
           </p>
 
           <form className="mt-4" onSubmit={handleSubmit(onSubmit)}>
-            <input
-              className="outline-none dark:bg-slate-800"
-              placeholder="max@minimum.com"
-              autoComplete="email"
-              type="email"
-              {...register("email", { required: true })}
-            />
-            <button
-              className="bg-gradient-to-r from-[#FFEC50] text-white py-1 px-4 absolute right-2 rounded-lg to-[#FFAF27]"
-              type="submit"
-            >
+            <input className="outline-none dark:bg-slate-800" placeholder="max@minimum.com" autoComplete="email" type="email" {...register("email", { required: true })} />
+            <button className="bg-gradient-to-r from-[#FFEC50] text-white py-1 px-4 absolute right-2 rounded-lg to-[#FFAF27]" type="submit">
               Join
             </button>
           </form>
         </>
       )}
-      {registerOnWaitinglist && (
+      {registerOnWaitinglist == true && (
         <>
-          <h2 className="mb-2  text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#FFEC50] to-[#FFAF27] leading-6">
-            You are on the waiting list
-          </h2>
+          <h2 className="mb-2  text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#FFEC50] to-[#FFAF27] leading-6">You are on the waiting list</h2>
           <p className="text-gray-300">
             We will inform you as soon as we launch our beta{" "}
             <span role="img" aria-label="thumbs-up">
@@ -273,12 +229,22 @@ export function SignUpForm() {
           <p className="mt-2 text-blue-300">{email}</p>
         </>
       )}
+      {registerOnWaitinglist == "error" && (
+        <>
+          <h2 className="mb-2  text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#FFEC50] to-[#FFAF27] leading-6">Unfortunately, we could not add your email address to the waiting list.</h2>
+          <p className="text-gray-300">
+            Please try again later or contact us.
+          </p>
+          <br></br>
+          <p className="mt-2 text-blue-300">vuuu@arrenberg.studio</p>
+        </>
+      )}
     </div>
   );
 }
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common"]))
-  }
+    ...(await serverSideTranslations(locale, ["common"])),
+  },
 });
