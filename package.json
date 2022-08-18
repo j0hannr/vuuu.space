@@ -1,0 +1,30 @@
+{
+  "name": "vuuu.space",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@notionhq/client": "2.1.1",
+    "next": "12.2.5",
+    "next-i18next": "11.3.0",
+    "next-seo": "5.5.0",
+    "node-fetch": "3.2.10",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "7.34.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "eslint": "8.22.0",
+    "eslint-config-next": "12.2.5",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
+  },
+  "keywords": [],
+  "description": ""
+}

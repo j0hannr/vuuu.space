@@ -1,0 +1,42 @@
+{
+  "landing": {
+    "title": {
+      "what did you do": "what did you do",
+      "yesterday morning": "yesterday morning",
+      "last saturday": "one year ago"
+    },
+    "waitinglist": {
+      "Join the waiting list": "Join the waiting list",
+      "We will inform you as soon as we launch our beta": "We will inform you as soon as we launch our beta",
+      "your email": "your email"
+    },
+    "section": {
+      "our brain tries to forget anything": "our brain tries to forget anything",
+      "write to remember more": "write to remember more",
+      "or read when you can’t": "or read when you can’t",
+      "writing a diary helps you to": "writing a diary helps you to",
+      "reflect yourself": "reflect yourself",
+      "value your time": "value your time",
+      "appreciate others": "appreciate others",
+      "reduce stress": "reduce stress"
+    },
+    "features": {
+      "reminder": {
+        "reminder": "reminder",
+        "you have 24 hours to write about the last day - in order to keep you consistent and write what your really felt and experience. In case you forget it we will send you a reminder": "you have 24 hours to write about the last day - in order to keep you consistent and write what your really felt and experience. In case you forget it we will send you a reminder"
+      },
+      "editor": {
+        "beautiful text editor": "beautiful text editor",
+        "to focus on your story i have created a very simplistic text editor - you can choose the font": "to focus on your story i have created a very simplistic text editor - you can choose the font"
+      },
+      "privacy": {
+        "privacy first": "privacy first",
+        "since writings are as personal as it gets - all your writings will be encrypted before they are uploaded. We use a privat key that you only now. So nobody can read your writings.": "since writings are as personal as it gets - all your writings will be encrypted before they are uploaded. We use a privat key that you only now. So nobody can read your writings."
+      }
+    }
+  },
+  "seo": {
+    "title": "vuuu tagebuch",
+    "description": "vuuu.space - ein digitales tagebuch zum errinnern, wertschätzen und danken von momenten im leben."
+  }
+}
