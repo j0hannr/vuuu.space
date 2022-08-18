@@ -21,7 +21,8 @@ import { NextSeo } from "next-seo";
  * # seo component
  * # translation => config issues (fs) (https://github.com/i18next/next-i18next/blob/master/examples/simple/pages/index.js)
  * # hydration failed: img => Image fix
- * - publish on vuuu.space
+ * # publish on vuuu.space
+ * # dark mode
  *
  */
 
@@ -227,7 +228,7 @@ export function SignUpForm() {
   };
 
   return (
-    <div className="absolute mt-12 bg-white border-sm border-gray-300 w-full max-w-screen-sm flex flex-col p-4 rounded-xl mb-2">
+    <div className="absolute mt-12 dark:bg-slate-800 bg-white border-sm border-gray-300 w-full max-w-screen-sm flex flex-col p-4 rounded-xl mb-2">
       {!registerOnWaitinglist && (
         <>
           <h2 className="mb-2  text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#FFEC50] to-[#FFAF27] leading-6">
@@ -242,14 +243,14 @@ export function SignUpForm() {
 
           <form className="mt-4" onSubmit={handleSubmit(onSubmit)}>
             <input
-              className="outline-none"
+              className="outline-none dark:bg-slate-800"
               placeholder="max@minimum.com"
               autoComplete="email"
               type="email"
               {...register("email", { required: true })}
             />
             <button
-              className="bg-gradient-to-r from-[#FFEC50] text-white py-1 px-2 absolute right-2 rounded-lg to-[#FFAF27]"
+              className="bg-gradient-to-r from-[#FFEC50] text-white py-1 px-4 absolute right-2 rounded-lg to-[#FFAF27]"
               type="submit"
             >
               Join
