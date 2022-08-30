@@ -111,6 +111,17 @@ export default function LandingPage() {
 
             <section className="  md:grid md:grid-cols-2 items-center py-28">
               <div className=" h-[300px] relative">
+                <Image src="/img/feature-location.png" alt="g" layout="fill" objectFit="contain" quality={100} />
+              </div>
+              <div className="">
+                <h4 className="text-3xl sm:text-5xl  text-left">location tagging</h4>
+                <br></br>
+                <p className="text-gray-300  text-2xl max-w-[500px]">to focus on your story we have created a very simplistic text editor - you have all the freedom to express yourself</p>
+              </div>
+            </section>
+
+            <section className="  md:grid md:grid-cols-2 items-center py-28">
+              <div className=" h-[300px] relative">
                 <Image src="/img/feature-encryption.png" alt="g" layout="fill" objectFit="contain" quality={100} />
               </div>
               <div className="">
